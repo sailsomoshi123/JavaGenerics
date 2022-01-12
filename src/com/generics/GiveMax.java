@@ -18,44 +18,22 @@ public class GiveMax {
         System.out.println("max number is: " + testThird);
         System.out.println("---------------------------");
 
-        String testWord1 = giveMax("yogesh","soham","sail");
+        String testWord1 = giveMax("yogesh", "soham", "sail");
         System.out.println("Bigger string is: " + testWord1);
-        String testWord2 = giveMax("soham","yogesh","sail");
+        String testWord2 = giveMax("soham", "yogesh", "sail");
         System.out.println("Bigger string is: " + testWord2);
-        String testWord3 = giveMax("sail","soham","yogesh");
+        String testWord3 = giveMax("sail", "soham", "yogesh");
         System.out.println("Bigger string is: " + testWord3);
         System.out.println("---------------------------");
     }
 
-    public static Integer giveMax(Integer num1, Integer num2, Integer num3) {
-        Integer max = num1;
-        if (num2.compareTo(max) > 0) {
-            max = num2;
+    public static <E extends Comparable> E giveMax(E element1, E element2, E element3) {
+        E max = element1;
+        if (element2.compareTo(max) > 0) {
+            max = element2;
         }
-        if (num3.compareTo(max) > 0) {
-            max = num3;
-        }
-        return max;
-    }
-
-    public static Float giveMax(Float num1, Float num2, Float num3) {
-        Float max = num1;
-        if (num2.compareTo(max) > 0) {
-            max = num2;
-        }
-        if (num3.compareTo(max) > 0) {
-            max = num3;
-        }
-        return max;
-    }
-
-    public static String giveMax(String word1, String word2, String word3) {
-        String max = word1;
-        if (word2.compareTo(max) > 0) {
-            max = word2;
-        }
-        if (word3.compareTo(max) > 0) {
-            max = word3;
+        if (element3.compareTo(max) > 0) {
+            max = element3;
         }
         return max;
     }
